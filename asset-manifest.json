@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-tic-tac-toe/static/css/main.01f59667.chunk.css",
-    "main.js": "/react-tic-tac-toe/static/js/main.7a92a563.chunk.js",
-    "main.js.map": "/react-tic-tac-toe/static/js/main.7a92a563.chunk.js.map",
-    "runtime-main.js": "/react-tic-tac-toe/static/js/runtime-main.fa936741.js",
-    "runtime-main.js.map": "/react-tic-tac-toe/static/js/runtime-main.fa936741.js.map",
-    "static/js/2.c3592fc8.chunk.js": "/react-tic-tac-toe/static/js/2.c3592fc8.chunk.js",
-    "static/js/2.c3592fc8.chunk.js.map": "/react-tic-tac-toe/static/js/2.c3592fc8.chunk.js.map",
-    "index.html": "/react-tic-tac-toe/index.html",
-    "precache-manifest.079a037c19e923e08217bc4eeac497e4.js": "/react-tic-tac-toe/precache-manifest.079a037c19e923e08217bc4eeac497e4.js",
-    "service-worker.js": "/react-tic-tac-toe/service-worker.js",
-    "static/css/main.01f59667.chunk.css.map": "/react-tic-tac-toe/static/css/main.01f59667.chunk.css.map",
-    "static/js/2.c3592fc8.chunk.js.LICENSE.txt": "/react-tic-tac-toe/static/js/2.c3592fc8.chunk.js.LICENSE.txt"
+    "main.css": "/ktv-tic-tac-toe/static/css/main.c4694afc.chunk.css",
+    "main.js": "/ktv-tic-tac-toe/static/js/main.7ae54655.chunk.js",
+    "main.js.map": "/ktv-tic-tac-toe/static/js/main.7ae54655.chunk.js.map",
+    "runtime-main.js": "/ktv-tic-tac-toe/static/js/runtime-main.db451f12.js",
+    "runtime-main.js.map": "/ktv-tic-tac-toe/static/js/runtime-main.db451f12.js.map",
+    "static/js/2.10758d43.chunk.js": "/ktv-tic-tac-toe/static/js/2.10758d43.chunk.js",
+    "static/js/2.10758d43.chunk.js.map": "/ktv-tic-tac-toe/static/js/2.10758d43.chunk.js.map",
+    "index.html": "/ktv-tic-tac-toe/index.html",
+    "precache-manifest.569d4a32e9dbdc6fae6bfcec00198250.js": "/ktv-tic-tac-toe/precache-manifest.569d4a32e9dbdc6fae6bfcec00198250.js",
+    "service-worker.js": "/ktv-tic-tac-toe/service-worker.js",
+    "static/css/main.c4694afc.chunk.css.map": "/ktv-tic-tac-toe/static/css/main.c4694afc.chunk.css.map",
+    "static/js/2.10758d43.chunk.js.LICENSE.txt": "/ktv-tic-tac-toe/static/js/2.10758d43.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fa936741.js",
-    "static/js/2.c3592fc8.chunk.js",
-    "static/css/main.01f59667.chunk.css",
-    "static/js/main.7a92a563.chunk.js"
+    "static/js/runtime-main.db451f12.js",
+    "static/js/2.10758d43.chunk.js",
+    "static/css/main.c4694afc.chunk.css",
+    "static/js/main.7ae54655.chunk.js"
   ]
 }
