@@ -6,7 +6,6 @@ import './Square.css'
 const Square = (props) => {
 
   const onButtonClick = () => {
-    console.log("ON BUTTON CLICK HAS RUN")
     const updatedSquare = {
         id: props.id,
         value: "",

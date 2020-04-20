@@ -21,15 +21,14 @@ const generateSquares = () => {
       currentId += 1;
     }
   }
-
-  return squares;
+  return squares; // array of arrays
 }
 
 const App = () => {
 
   const [squares, setSquares] = useState(generateSquares());
   const [currentPlayer, setPlayer] = useState(PLAYER_1);
-  // const [winner, setWinner] = useState(null);
+  const [winner, setWinner] = useState(null);
 
   
   const onClickCallback = (clickedOnSquare) => {
@@ -37,9 +36,11 @@ const App = () => {
     squares.forEach( (squareArray) => {
       const tempArray = []
       squareArray.forEach( (square) => {
-        if(square.id === clickedOnSquare.id) {
+        if(square.id === clickedOnSquare.id && square.value === "" && winner === null) {
           clickedOnSquare.value = currentPlayer
           tempArray.push(clickedOnSquare)
+          currentPlayer === PLAYER_1 ? setPlayer(PLAYER_2) : setPlayer(PLAYER_1)
+    
         }
         else{
           tempArray.push(square)
@@ -49,13 +50,44 @@ const App = () => {
       squaresNew.push(tempArray)
     })
     setSquares(squaresNew)
-    currentPlayer === PLAYER_1 ? setPlayer(PLAYER_2) : setPlayer(PLAYER_1)
-
+    checkForWinner(squaresNew)
   };
     
 
-  const checkForWinner = () => {
-    // Complete in Wave 3
+  const checkForWinner = (squaresArray) => {
+
+    // checking diagonals
+    if ( squaresArray[0][0].value === squaresArray[1][1].value && squaresArray[0][0].value === squaresArray[2][2].value && squaresArray[0][0].value !=="") {
+      setWinner(squaresArray[0][0].value)
+    } 
+    else if ( squaresArray[2][0].value === squaresArray[1][1].value && squaresArray[2][0].value === squaresArray[0][2].value && squaresArray[2][0].value !=="") {
+      setWinner(squaresArray[0][0].value)
+    } 
+
+    // checking verticals & horizontals
+    for(let i = 0; i < 3; i++) {
+       if ( squaresArray[0][i].value === squaresArray[1][i].value && squaresArray[0][i].value === squaresArray[2][i].value && squaresArray[0][i].value !=="" ) {
+        setWinner(squaresArray[0][i].value)
+       } 
+       else if ( squaresArray[i][0].value === squaresArray[i][1].value && squaresArray[i][0].value === squaresArray[i][2].value && squaresArray[i][0].value !=="" ) {
+        setWinner(squaresArray[i][0].value)
+       } 
+    }
+
+    // checking for tie
+    let numFilledSquares = 0
+    // array.filter(function(currentValue, index, arr), thisValue)
+    squaresArray.forEach( (squaresRow) => {
+      let countPerRow = squaresRow.filter( square => {
+        return square.value !==""
+      })
+      numFilledSquares += countPerRow.length
+    })
+    
+    if(numFilledSquares === 9) {
+      setWinner("Tie")
+    };
+
 
   }
 
@@ -67,7 +99,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>React Tic Tac Toe</h1>
-        <h2>The winner is ... -- Fill in for wave 3 </h2>
+        <h2>The winner is {winner} </h2>
         <button>Reset Game</button>
       </header>
       <main>
