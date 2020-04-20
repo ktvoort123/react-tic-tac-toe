@@ -61,7 +61,7 @@ const App = () => {
       setWinner(squaresArray[0][0].value)
     } 
     else if ( squaresArray[2][0].value === squaresArray[1][1].value && squaresArray[2][0].value === squaresArray[0][2].value && squaresArray[2][0].value !=="") {
-      setWinner(squaresArray[0][0].value)
+      setWinner(squaresArray[2][0].value)
     } 
 
     // checking verticals & horizontals
@@ -76,7 +76,7 @@ const App = () => {
 
     // checking for tie
     let numFilledSquares = 0
-    // array.filter(function(currentValue, index, arr), thisValue)
+
     squaresArray.forEach( (squaresRow) => {
       let countPerRow = squaresRow.filter( square => {
         return square.value !==""
@@ -87,20 +87,19 @@ const App = () => {
     if(numFilledSquares === 9) {
       setWinner("Tie")
     };
-
-
   }
 
   const resetGame = () => {
-    // Complete in Wave 4
+    setSquares(generateSquares())
+    setWinner(null)
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>React Tic Tac Toe</h1>
-        <h2>The winner is {winner} </h2>
-        <button>Reset Game</button>
+        <h2>The winner is <em>{winner}</em></h2>
+        <button onClick={resetGame}>Reset Game</button>
       </header>
       <main>
         <Board squares={squares} onClickCallback={onClickCallback} />
