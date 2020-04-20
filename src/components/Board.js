@@ -5,40 +5,27 @@ import PropTypes from 'prop-types';
 
 
 const generateSquareComponents = (squares, onClickCallback) => {
-  // console.log(squares)
-  // const squaresOnBoard = squares.map( squareArray => {
-  //   squareArray.map( square => {
-  //     // console.log(square)
-  //     return <Square 
-  //     onClickCallback={onClickCallback} 
-  //     id={square.id} 
-  //     value={square.value}
-  //     />
-  //   })
-  // })
-  let squaresOnBoard = []
-  for(let i = 0; i<squares.length; i++){
-    console.log(squares[i])
-    let tempArray = []
-    for(let x = 0; x<squares[i].length; x++){
-      console.log(squares[i][x])
-      console.log(squares[i][x].id)
-      tempArray.push(<Square 
-        onClickCallback={onClickCallback} 
-        id={squares[i][x].id} 
-        value={squares[i][x].value}
-        key={squares[i][x].id}
-      />)
-    }
-    squaresOnBoard.push(tempArray)
-  };
-  console.log(squaresOnBoard[1])
 
-  return (
-    <ul>
-      {squaresOnBoard}
-    </ul>
-  )
+  let squaresOnBoard = []
+  for(let row = 0; row<squares.length; row++){
+    console.log(squares[row])
+    for(let col = 0; col<squares[row].length; col++){
+      console.log(squares[row][col])
+      console.log(squares[row][col].id)
+      console.log(squares[row][col].value)
+      squaresOnBoard.push(
+      <Square 
+        onClickCallback={onClickCallback} 
+        id={squares[row][col].id} 
+        value={squares[row][col].value}
+        key={squares[row][col].id}
+      />
+      )
+    }
+  };
+  console.log(squaresOnBoard)
+
+  return squaresOnBoard
 }
 
 const Board = ({ squares, onClickCallback }) => {
